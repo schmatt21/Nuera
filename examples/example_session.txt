@@ -1,0 +1,41 @@
+# Demo session
+
+Neura tutors AQA A Level Mathematics 7357. Practice questions are
+original practice questions in the style of AQA, not past papers.
+
+Run this first to see the loop without typing:
+
+    python -m neura.cli demo
+
+Output:
+
+    Demo: Socratic tutor, AQA A Level Maths — Algebra and functions
+    Question: Solve x^2 - 5x + 6 = 0. What is the larger root?
+
+    Learner answers '2' (wrong — that is the smaller root).
+    Hint given, then correct. Hints used: 1
+    Correct: True, mastery now 0.08
+
+    The tutor never printed the answer. It only asked,
+    hinted, and recorded what happened.
+
+# Interactive session (example)
+
+    $ python -m neura.cli tutor --name Alex --topic b_algebra_functions
+
+    Solve x^2 - 5x + 6 = 0. What is the larger root?
+
+    > 2
+    Hint: Factorise – which two numbers multiply to 6 and add to -5?
+    > 3
+    Correct. Mastery for this topic is now 0.08.
+
+# Diagnostic session (example)
+
+    $ python -m neura.cli diagnose --name Alex
+
+The tutor asks one question per topic with questions so far
+(topics A to F), scores each one, and then says which topic to
+study next. If a later topic is weak only because an earlier one
+is weak, it picks the earlier one first — for example, weak
+quadratics in Algebra and functions blocks Differentiation.
